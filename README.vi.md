@@ -1,25 +1,25 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="Portlane" /></a>
-  <h1>Portlane</h1>
+  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
+  <h1>PNUX</h1>
   <p><strong>Thấy port ngay. Chọn nhanh. Dừng có xác nhận.</strong></p>
   <p><a href="https://luan-thnh.github.io/portlane/">Website</a> · <a href="README.md">English</a> · <a href="#chạy-thử">Bắt đầu</a></p>
 </div>
 
-![Giới thiệu Portlane](docs/banner.svg)
+![Giới thiệu PNUX](docs/banner.svg)
 
 > Banner và các ảnh TUI dùng dữ liệu minh họa, không phải tiến trình thực tế.
 
-**Portlane** là công cụ quản lý port cho Linux/Ubuntu. Giao diện bảng ưu tiên **PORT**, tiếp đến tên ứng dụng; hỗ trợ chọn nhiều bằng <kbd>Space</kbd> và xác nhận <kbd>Y/N</kbd> trước khi dừng.
+**PNUX** là công cụ quản lý port cho Linux/Ubuntu. Giao diện bảng ưu tiên **PORT**, tiếp đến tên ứng dụng; hỗ trợ chọn nhiều bằng <kbd>Space</kbd> và xác nhận <kbd>Y/N</kbd> trước khi dừng.
 
 ## Chạy thử
 
 Sau khi chủ dự án phát hành npm:
 
 ```bash
-npx portlane-tui
+npx pnux
 ```
 
-**Hiện chưa publish lên npm Registry.** Tên `portlane` đang thuộc package khác, nên không chạy `npx portlane` để sử dụng công cụ này.
+**Package `pnux` chưa được publish lên npm.** Sau khi bạn tự publish, lệnh `npx pnux` mới chạy được. Hiện tại có thể chạy từ source ở bên dưới.
 
 Chạy ngay từ source (Node.js 20+, Linux, tài khoản thường):
 
@@ -29,13 +29,13 @@ cd portlane
 npm start
 ```
 
-Nếu muốn dùng lệnh `portlane` trên máy: chạy `npm link` trong thư mục dự án.
+Nếu muốn dùng lệnh `pnux` trên máy: chạy `npm link` trong thư mục dự án.
 
 ## Giao diện thực tế
 
-<p align="center"><img src="docs/terminal.png" alt="Bảng Portlane" width="860" /></p>
+<p align="center"><img src="docs/terminal.svg" alt="Bảng PNUX" width="860" /></p>
 <p align="center"><sub>PORT · PROCESS · PID, chọn nhiều bằng Space</sub></p>
-<p align="center"><img src="docs/confirmation.png" alt="Hộp xác nhận Portlane" width="860" /></p>
+<p align="center"><img src="docs/confirmation.svg" alt="Hộp xác nhận PNUX" width="860" /></p>
 
 | Phím | Tác dụng |
 | --- | --- |
@@ -49,11 +49,11 @@ Nếu muốn dùng lệnh `portlane` trên máy: chạy `npm link` trong thư m�
 ### Xem thông tin (không kill)
 
 ```bash
-portlane --list
-portlane --list --mine
-portlane --list --all
-portlane --json
-portlane --udp --list
+pnux --list
+pnux --list --mine
+pnux --list --all
+pnux --json
+pnux --udp --list
 ```
 
 ## Cơ chế an toàn

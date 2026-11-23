@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="Portlane" /></a>
-  <h1>Portlane</h1>
+  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
+  <h1>PNUX</h1>
   <p><strong>Find the port. Select the process. Get back to building.</strong></p>
   <p>
     <a href="https://luan-thnh.github.io/portlane/">Website</a> ·
@@ -16,19 +16,19 @@
   </p>
 </div>
 
-![Portlane terminal manager hero](docs/banner.svg)
+![PNUX terminal manager hero](docs/banner.svg)
 
 > **Illustration:** example ports and process IDs shown above are not real processes on your machine.
 
-Portlane is a small, keyboard-first **Linux port manager**. It shows the listening ports you can manage, with the **port number first**, the process name next, and technical details out of the way. Select several rows with Space; stop only after confirming.
+PNUX is a small, keyboard-first **Linux port manager**. It shows the listening ports you can manage, with the **port number first**, the process name next, and technical details out of the way. Select several rows with Space; stop only after confirming.
 
 ## Quick start
 
 ```bash
-npx portlane-tui
+npx pnux
 ```
 
-**npm release is pending.** The command above works *after* the maintainer publishes `portlane-tui` to npm. The package named `portlane` belongs to a different project; do not use `npx portlane` for this tool.
+**npm release pending:** `npx pnux` will work after the maintainer publishes the new `pnux` package. Until then, run the source version below.
 
 **Run from source today** (Linux/Ubuntu, Node.js 20+, normal user):
 
@@ -38,13 +38,13 @@ cd portlane
 npm start
 ```
 
-Or install a local global command with `npm link`, then run `portlane`. No external runtime dependencies or daemon.
+Or install a local global command with `npm link`, then run `pnux`. No external runtime dependencies or daemon. The GitHub repository remains named `portlane` to preserve existing links.
 
-## See it in action
+## Terminal preview
 
-<p align="center"><img src="docs/terminal.png" alt="Portlane table with checked ports" width="860" /></p>
+<p align="center"><img src="docs/terminal.svg" alt="PNUX table with checked ports" width="860" /></p>
 <p align="center"><sub>Focused port-first table · <kbd>Space</kbd> to select multiple rows</sub></p>
-<p align="center"><img src="docs/confirmation.png" alt="Portlane confirmation prompt" width="860" /></p>
+<p align="center"><img src="docs/confirmation.svg" alt="PNUX confirmation prompt" width="860" /></p>
 <p align="center"><sub>Review before sending one graceful SIGTERM per unique process</sub></p>
 
 | Key | Action |
@@ -59,11 +59,11 @@ Or install a local global command with `npm link`, then run `portlane`. No exter
 ### Read-only CLI
 
 ```bash
-portlane --list          # Manageable listening ports
-portlane --list --mine   # Current-user sockets and protection status
-portlane --list --all    # All visible sockets
-portlane --json          # Machine-readable output
-portlane --udp --list    # Include UDP
+pnux --list          # Manageable listening ports
+pnux --list --mine   # Current-user sockets and protection status
+pnux --list --all    # All visible sockets
+pnux --json          # Machine-readable output
+pnux --udp --list    # Include UDP
 ```
 
 ## Built to be careful
@@ -87,4 +87,4 @@ The landing page is static HTML, CSS and JavaScript in [`docs/`](docs/). View lo
 
 **GitHub Pages:** in **Settings → Pages**, select **Deploy from a branch → main → /docs → Save**. Alternatively select **Source → GitHub Actions** to let the [workflow](.github/workflows/pages.yml) deploy `docs/`. The workflow runs tests but **never publishes npm**; only the maintainer does that, following [PUBLISHING.md](PUBLISHING.md).
 
-Inspired by [npkill](https://github.com/voidcosmos/npkill)'s focused TUI. Portlane's port management logic is an independent implementation. [MIT License](LICENSE).
+Inspired by [npkill](https://github.com/voidcosmos/npkill)'s focused TUI. PNUX's port management logic is an independent implementation. [MIT License](LICENSE).

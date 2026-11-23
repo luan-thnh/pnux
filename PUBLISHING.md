@@ -1,4 +1,4 @@
-# Portlane — website deployment and npm release
+# PNUX — website deployment and npm release
 
 The repository is live at https://github.com/luan-thnh/portlane.
 
@@ -15,28 +15,34 @@ No workflow publishes npm packages.
 
 ## Publish to npm manually (maintainers only)
 
-**Important naming note:** The unscoped npm package `portlane` already belongs to a separate project. Do **not** publish as `portlane` or advertise `npx portlane`; it would run unrelated software. Our package name is **`portlane-tui`**, while the executable installed by npm is still `portlane`.
+The new npm package name is **`pnux`**, and its executable is also **`pnux`**. The GitHub repository intentionally stays at `luan-thnh/portlane` to preserve existing links.
 
-Before publishing, confirm that you own the intended npm name and it is available for your account. If `portlane-tui` is already owned by somebody else, choose an unclaimed name or your own scope (for example `@YOUR_NPM_USERNAME/portlane`) and update the hero/README accordingly. An npm account name may differ from a GitHub username.
+Before publishing, check that the name is still available. An npm registry 404 suggests that the package is not registered publicly, but does **not** guarantee that npm will accept the name.
 
 ```bash
-# From the repository root, with Node.js 20+ on Linux
-npm login
 npm whoami
-npm view portlane-tui name version   # May return E404 when available
+npm view pnux name version      # E404 is expected before first publication
 npm test
 npm run pack:check
 npm publish --access public
 ```
 
-The npm Registry may require two-factor authentication or another approved authentication method. `npm publish` is a built-in npm command; it is not an `npm run publish` script. Never commit npm tokens or `.npmrc` credentials.
+If needed, sign in using `npm login` and complete npm's authentication requirements.
 
-After a successful publish, verify:
+Verify after publication:
 
 ```bash
-npm view portlane-tui name version bin
-npx portlane-tui
-# Or: npm install -g portlane-tui && portlane
+npm view pnux name version bin
+npx pnux
+# Or install globally:
+npm install -g pnux
+pnux
 ```
 
-`npx portlane-tui` is an installation-from-registry command, **not an offline command**. The landing page advertises it for after publication, and includes local `npm link` instructions until then. The GitHub Pages workflow deliberately never runs `npm publish`.
+**Old package:** `portlane-tui` is a separate, already-published package. npm does not rename releases automatically. Only after `pnux` publishes successfully, you may optionally mark old versions deprecated for a migration notice:
+
+```bash
+npm deprecate 'portlane-tui@*' 'Renamed to pnux. Use npx pnux instead.'
+```
+
+Do not unpublish the old package just to change names. Never commit npm tokens or `.npmrc` credentials. GitHub Actions does **not** publish to npm.

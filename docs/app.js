@@ -101,9 +101,9 @@ async function copy(text, button) {
   }
   setTimeout(() => { label.textContent = 'Copy'; }, 1800);
 }
-document.getElementById('copy-npx').addEventListener('click', event => copy('npx portlane-tui', event.currentTarget));
+document.getElementById('copy-npx').addEventListener('click', event => copy('npx pnux', event.currentTarget));
 document.getElementById('copy-command').addEventListener('click', event => copy('npm link', event.currentTarget));
-document.getElementById('copy-run').addEventListener('click', event => copy('portlane', event.currentTarget));
+document.getElementById('copy-run').addEventListener('click', event => copy('pnux', event.currentTarget));
 
 
 // The theme choice is local to the browser; the CLI never reads it.
@@ -119,13 +119,13 @@ function applyTheme(theme) {
   colorMeta.content = dark ? '#0c0d0f' : '#f5f5ee';
 }
 function getSavedTheme() {
-  try { return localStorage.getItem('portlane-theme'); } catch { return null; }
+  try { return localStorage.getItem('pnux-theme'); } catch { return null; }
 }
 applyTheme(document.documentElement.dataset.theme || (systemTheme.matches ? 'dark' : 'light'));
 themeToggle.addEventListener('click', () => {
   const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
   applyTheme(next);
-  try { localStorage.setItem('portlane-theme', next); } catch { /* private mode */ }
+  try { localStorage.setItem('pnux-theme', next); } catch { /* private mode */ }
 });
 systemTheme.addEventListener?.('change', event => {
   if (!['light', 'dark'].includes(getSavedTheme())) applyTheme(event.matches ? 'dark' : 'light');

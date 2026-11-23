@@ -28,7 +28,7 @@ test('only safe/manageable apps appear and development ports sort first', () => 
 
 test('simple compact table prioritizes PORT and PROCESS, relegating PID', () => {
   const result = plain(renderTableScreen({ entries, columns: 80, rows: 24 }));
-  assert.match(result, /PORTLANE/);
+  assert.match(result, /PNUX/);
   assert.match(result, /PORT\s+PROCESS\s+PID/);
   assert.match(result, /\[ \]\s+:3000\s+next-server \(v1\)\s+123/);
   assert.match(result, /\[ \]\s+:5173\s+vite\s+124/);

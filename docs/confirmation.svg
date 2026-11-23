@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="280" viewBox="0 0 930 280">
+<rect x="1" y="1" width="928" height="278" rx="16" fill="#121619" stroke="#303638" stroke-width="2"/>
+<rect x="1" y="1" width="928" height="45" rx="16" fill="#1D2326"/>
+<path d="M1 46H929" stroke="#31393B"/><circle cx="25" cy="23" r="6" fill="#727D7D"/><circle cx="47" cy="23" r="6" fill="#727D7D"/><circle cx="69" cy="23" r="6" fill="#727D7D"/>
+<g font-family="monospace">
+<text x="38" y="86" font-weight="700" font-size="21" fill="#BDEC8A">PNUX</text><text x="889" y="86" font-size="14" fill="#91A19B" text-anchor="end">Confirm stop</text>
+<path d="M38 100H891" stroke="#394442"/>
+<text x="40" y="140" fill="#FFE49B" font-size="20" font-weight="700">Stop 2 ports (2 processes)? [y/N]</text>
+<text x="40" y="174" fill="#B1BDBC" font-size="17">:3000, :5173 · Stops entire processes</text>
+<path d="M38 205H892" stroke="#394442"/>
+<text x="40" y="241" fill="#E5EBE8" font-size="16">y Confirm</text><text x="202" y="241" fill="#A9B5B2" font-size="16">n Cancel</text>
+</g></svg>

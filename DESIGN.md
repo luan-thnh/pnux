@@ -1,4 +1,4 @@
-# Portlane design system
+# PNUX design system
 
 - **Promise:** Port is always visually dominant, process next, PID last.
 - **TUI:** Terminal-native characters, a single restrained green accent, dim metadata, selected-row background, no tabs or panels. Confirm before every signal.
@@ -10,4 +10,4 @@
 
 ## Installation command
 
-The landing page hero presents one copyable command in a dark neutral code surface. Until npm publication, explain that `npx portlane-tui` is a post-publication command and point users to the local source install. Do not use `npx portlane`: that npm package belongs to another publisher.
+The landing page hero presents one copyable `npx pnux` command in a neutral code surface. Clearly mark it as usable only after the maintainer publishes `pnux` to npm; point users to the GitHub source for local installation. The repository URL remains `luan-thnh/portlane` for compatibility.

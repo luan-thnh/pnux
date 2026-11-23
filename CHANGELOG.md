@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 — Rename to PNUX
+
+- Rebranded the npm package and executable as `pnux` (`npx pnux` after publication).
+- Updated Linux TUI header, website, copy actions, multilingual README, demo illustrations, and npm publishing instructions.
+- Kept the GitHub repository URL unchanged to preserve links.
+- No changes to process safety or termination behavior; npm publication remains a manual action.
+
 ## 0.5.3 — Hero command and npm publishing guide
 
 - Added a copyable npm command directly in the landing-page hero.

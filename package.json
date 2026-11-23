@@ -1,10 +1,10 @@
 {
-  "name": "portlane-tui",
-  "version": "0.5.3",
-  "description": "A focused, safe multi-select port manager for Linux developers",
+  "name": "pnux",
+  "version": "0.6.0",
+  "description": "A compact, safe multi-select port manager for Linux developers",
   "type": "module",
   "bin": {
-    "portlane": "./bin/portlane.js"
+    "pnux": "./bin/pnux.js"
   },
   "exports": {
     ".": "./src/index.js"
@@ -17,10 +17,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "start": "node ./bin/portlane.js",
+    "start": "node ./bin/pnux.js",
     "test": "node --test",
     "pack:check": "npm pack --dry-run",
-    "demo": "node ./bin/portlane.js --list"
+    "demo": "node ./bin/pnux.js --list"
   },
   "engines": {
     "node": ">=20"
