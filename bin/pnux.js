@@ -10,17 +10,17 @@ function help() {
   console.log(`PNUX v0.6.0 — compact port table for Linux
 
 Usage:
-  pnux               Interactive list of ports you can manage
-  pnux --list        List manageable ports without the UI
-  pnux --json        Inspect raw sockets as JSON (read-only)
-  pnux --help        Show help
+  pnux9              Interactive list of ports you can manage
+  pnux9 --list        List manageable ports without the UI
+  pnux9 --json        Inspect raw sockets as JSON (read-only)
+  pnux9 --help        Show help
 
 Keys: ↑↓ move · Space check/uncheck · Enter stop checked · y/n confirm · q quit (r refresh)
 
 Advanced read-only inspection:
-  pnux --list --all  All visible sockets (including restricted)
-  pnux --list --mine All sockets mapped to your user
-  pnux --udp         Include bound UDP listeners
+  pnux9 --list --all  All visible sockets (including restricted)
+  pnux9 --list --mine All sockets mapped to your user
+  pnux9 --udp         Include bound UDP listeners
 
 No sudo, no automatic kill, no SIGKILL. One SIGTERM per confirmed process.
 `);
@@ -58,4 +58,4 @@ function main() {
   }
   startUI({ udp: args.has('--udp') });
 }
-try { main(); } catch (e) { console.error(`pnux: ${e.message}`); process.exitCode = 1; }
+try { main(); } catch (e) { console.error(`pnux9: ${e.message}`); process.exitCode = 1; }

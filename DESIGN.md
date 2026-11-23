@@ -10,4 +10,4 @@
 
 ## Installation command
 
-The landing page hero presents one copyable `npx pnux` command in a neutral code surface. Clearly mark it as usable only after the maintainer publishes `pnux` to npm; point users to the GitHub source for local installation. The repository URL remains `luan-thnh/portlane` for compatibility.
+The landing page hero presents one copyable `npx pnux9` command in a neutral code surface. Clearly mark it as usable only after the maintainer publishes `pnux9` to npm; point users to the GitHub source for local installation. The GitHub repository URL is `luan-thnh/pnux`.

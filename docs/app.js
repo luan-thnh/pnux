@@ -101,9 +101,9 @@ async function copy(text, button) {
   }
   setTimeout(() => { label.textContent = 'Copy'; }, 1800);
 }
-document.getElementById('copy-npx').addEventListener('click', event => copy('npx pnux', event.currentTarget));
+document.getElementById('copy-npx').addEventListener('click', event => copy('npx pnux9', event.currentTarget));
 document.getElementById('copy-command').addEventListener('click', event => copy('npm link', event.currentTarget));
-document.getElementById('copy-run').addEventListener('click', event => copy('pnux', event.currentTarget));
+document.getElementById('copy-run').addEventListener('click', event => copy('pnux9', event.currentTarget));
 
 
 // The theme choice is local to the browser; the CLI never reads it.

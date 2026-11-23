@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — npm package name `pnux9`
+
+- npm unscoped name `pnux` was rejected (403) by npm for similarity to established packages.
+- Prepared package `pnux9` with `pnux9` as the primary executable and `pnux` as an optional alias.
+- Updated install command to `npx pnux9` in the website, README and publishing instructions.
+- Updated GitHub links to the renamed `luan-thnh/pnux` repository.
+- Publishing remains manual and subject to npm registry approval.
+
 ## 0.6.0 — Rename to PNUX
 
 - Rebranded the npm package and executable as `pnux` (`npx pnux` after publication).

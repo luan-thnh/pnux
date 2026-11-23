@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
+  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
   <h1>PNUX</h1>
   <p><strong>Thấy port ngay. Chọn nhanh. Dừng có xác nhận.</strong></p>
-  <p><a href="https://luan-thnh.github.io/portlane/">Website</a> · <a href="README.md">English</a> · <a href="#chạy-thử">Bắt đầu</a></p>
+  <p><a href="https://luan-thnh.github.io/pnux/">Website</a> · <a href="README.md">English</a> · <a href="#chạy-thử">Bắt đầu</a></p>
 </div>
 
 ![Giới thiệu PNUX](docs/banner.svg)
@@ -16,20 +16,20 @@
 Sau khi chủ dự án phát hành npm:
 
 ```bash
-npx pnux
+npx pnux9
 ```
 
-**Package `pnux` chưa được publish lên npm.** Sau khi bạn tự publish, lệnh `npx pnux` mới chạy được. Hiện tại có thể chạy từ source ở bên dưới.
+**Package `pnux9` chưa được publish lên npm.** Sau khi bạn tự publish, lệnh `npx pnux9` mới chạy được. Hiện tại có thể chạy từ source ở bên dưới.
 
 Chạy ngay từ source (Node.js 20+, Linux, tài khoản thường):
 
 ```bash
-git clone https://github.com/luan-thnh/portlane.git
-cd portlane
+git clone https://github.com/luan-thnh/pnux.git
+cd pnux
 npm start
 ```
 
-Nếu muốn dùng lệnh `pnux` trên máy: chạy `npm link` trong thư mục dự án.
+Nếu muốn dùng lệnh `pnux9` (hoặc alias `pnux`) trên máy: chạy `npm link` trong thư mục dự án.
 
 ## Giao diện thực tế
 
@@ -49,11 +49,11 @@ Nếu muốn dùng lệnh `pnux` trên máy: chạy `npm link` trong thư mục 
 ### Xem thông tin (không kill)
 
 ```bash
-pnux --list
-pnux --list --mine
-pnux --list --all
-pnux --json
-pnux --udp --list
+pnux9 --list
+pnux9 --list --mine
+pnux9 --list --all
+pnux9 --json
+pnux9 --udp --list
 ```
 
 ## Cơ chế an toàn

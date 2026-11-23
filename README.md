@@ -1,15 +1,15 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/portlane/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
+  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
   <h1>PNUX</h1>
   <p><strong>Find the port. Select the process. Get back to building.</strong></p>
   <p>
-    <a href="https://luan-thnh.github.io/portlane/">Website</a> ·
+    <a href="https://luan-thnh.github.io/pnux/">Website</a> ·
     <a href="README.vi.md">Tiếng Việt</a> ·
     <a href="#quick-start">Quick start</a> ·
     <a href="PUBLISHING.md">Publishing guide</a>
   </p>
   <p>
-    <a href="https://github.com/luan-thnh/portlane/actions/workflows/pages.yml"><img src="https://github.com/luan-thnh/portlane/actions/workflows/pages.yml/badge.svg" alt="CI and Pages status" /></a>
+    <a href="https://github.com/luan-thnh/pnux/actions/workflows/pages.yml"><img src="https://github.com/luan-thnh/pnux/actions/workflows/pages.yml/badge.svg" alt="CI and Pages status" /></a>
     <img src="https://img.shields.io/badge/Linux-Ubuntu-24292F?logo=linux&logoColor=white" alt="Linux / Ubuntu" />
     <img src="https://img.shields.io/badge/Node.js-20%2B-24292F?logo=node.js&logoColor=white" alt="Node.js 20+" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-24292F" alt="MIT license" /></a>
@@ -25,20 +25,20 @@ PNUX is a small, keyboard-first **Linux port manager**. It shows the listening p
 ## Quick start
 
 ```bash
-npx pnux
+npx pnux9
 ```
 
-**npm release pending:** `npx pnux` will work after the maintainer publishes the new `pnux` package. Until then, run the source version below.
+**npm release pending:** `npx pnux9` will work after the maintainer publishes the new `pnux9` package. Until then, run the source version below.
 
 **Run from source today** (Linux/Ubuntu, Node.js 20+, normal user):
 
 ```bash
-git clone https://github.com/luan-thnh/portlane.git
-cd portlane
+git clone https://github.com/luan-thnh/pnux.git
+cd pnux
 npm start
 ```
 
-Or install a local global command with `npm link`, then run `pnux`. No external runtime dependencies or daemon. The GitHub repository remains named `portlane` to preserve existing links.
+Or install a local global command with `npm link`, then run `pnux9` (or the `pnux` alias). No external runtime dependencies or daemon. The GitHub repository is now named [`pnux`](https://github.com/luan-thnh/pnux).
 
 ## Terminal preview
 
@@ -59,11 +59,11 @@ Or install a local global command with `npm link`, then run `pnux`. No external 
 ### Read-only CLI
 
 ```bash
-pnux --list          # Manageable listening ports
-pnux --list --mine   # Current-user sockets and protection status
-pnux --list --all    # All visible sockets
-pnux --json          # Machine-readable output
-pnux --udp --list    # Include UDP
+pnux9 --list          # Manageable listening ports
+pnux9 --list --mine   # Current-user sockets and protection status
+pnux9 --list --all    # All visible sockets
+pnux9 --json          # Machine-readable output
+pnux9 --udp --list    # Include UDP
 ```
 
 ## Built to be careful

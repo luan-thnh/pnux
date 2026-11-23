@@ -1,9 +1,10 @@
 {
-  "name": "pnux",
+  "name": "pnux9",
   "version": "0.6.0",
   "description": "A compact, safe multi-select port manager for Linux developers",
   "type": "module",
   "bin": {
+    "pnux9": "./bin/pnux.js",
     "pnux": "./bin/pnux.js"
   },
   "exports": {
