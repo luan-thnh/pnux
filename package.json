@@ -1,0 +1,53 @@
+{
+  "name": "portlane-tui",
+  "version": "0.5.3",
+  "description": "A focused, safe multi-select port manager for Linux developers",
+  "type": "module",
+  "bin": {
+    "portlane": "./bin/portlane.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README.vi.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node ./bin/portlane.js",
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run",
+    "demo": "node ./bin/portlane.js --list"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "os": [
+    "linux"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "port",
+    "kill-port",
+    "process",
+    "linux",
+    "tui",
+    "cli",
+    "development",
+    "safe"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luan-thnh/portlane.git"
+  },
+  "homepage": "https://github.com/luan-thnh/portlane#readme",
+  "bugs": {
+    "url": "https://github.com/luan-thnh/portlane/issues"
+  }
+}

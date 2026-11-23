@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5ee">
+  <script>
+    // Apply before first paint; gracefully handle browsers with blocked storage.
+    try {
+      const saved = localStorage.getItem('portlane-theme');
+      const dark = saved === 'dark' || (saved !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#0c0d0f' : '#f5f5ee';
+    } catch {
+      const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#0c0d0f' : '#f5f5ee';
+    }
+  </script>
+  <meta name="description" content="Portlane is a focused terminal UI for finding, selecting, and safely stopping your own development ports on Linux.">
+  <meta property="og:title" content="Portlane — Ports, under control.">
+  <meta property="og:description" content="A keyboard-first port manager. Find it. Select it. Confirm the stop.">
+  <title>Portlane — Ports, under control.</title>
+  <link rel="icon" type="image/svg+xml" href="./mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="brand" href="#top" aria-label="Portlane home">
+      <img src="./mark.svg" width="34" height="34" alt="" aria-hidden="true">
+      <span>portlane<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#demo">Demo</a>
+      <a href="https://github.com/luan-thnh/portlane">GitHub</a>
+      <a href="#how">How it works</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle color theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.8"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      </button>
+      <a class="nav-cta" href="#install">Get started <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11m-5-5 5 5-5 5"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-layout">
+        <h1 id="hero-title">Ports,<br><span>under control.</span></h1>
+        <div class="hero-aside">
+          <div class="hero-rule" aria-hidden="true"></div>
+          <p>Find what's running. Select what to stop. Confirm once and get back to building.</p>
+          <a class="hero-link" href="#install">Get Portlane <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-install">
+        <div class="hero-install-command" aria-label="Portlane npm command">
+          <span class="hero-prompt" aria-hidden="true">$</span>
+          <code>npx portlane-tui</code>
+          <button class="hero-copy" id="copy-npx" type="button" aria-label="Copy npx portlane-tui command" title="Copy command">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5"/><path d="M5 13H4a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 4 2h8a1.5 1.5 0 0 1 1.5 1.5V5"/></svg>
+            <span>Copy</span>
+          </button>
+        </div>
+        <p class="hero-install-note">For Linux · Available after npm publication · <a href="#install">Run from source today</a></p>
+      </div>
+      <div class="hero-footer"><span>NO SUDO REQUIRED</span><span>NO BACKGROUND SERVICE</span><span>YOU STAY IN CONTROL</span></div>
+    </section>
+
+    <section class="demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap demo-head">
+        <h2 id="demo-title">A clearer view of what's listening.</h2>
+        <p>It's your terminal. It should feel effortless.</p>
+      </div>
+      <div class="wrap demo-area">
+        <div class="terminal-shell" id="terminal-demo" tabindex="0" aria-label="Interactive Portlane demo. Use arrow keys to move, Space to select, Enter to stop.">
+          <div class="terminal-top">
+            <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>~/projects &nbsp;·&nbsp; portlane</span>
+            <span class="terminal-type"><span class="terminal-led"></span> INTERACTIVE DEMO</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-title"><span>PORTLANE</span><small id="demo-count">5 ports</small></div>
+            <div class="terminal-separator"></div>
+            <div class="terminal-grid terminal-grid-head"><span></span><span>PORT</span><span>PROCESS</span><span>PID</span></div>
+            <div id="demo-rows" role="group" aria-label="Example listening ports"></div>
+            <div class="terminal-bottom">
+              <span id="demo-hint">Use <kbd>↑</kbd><kbd>↓</kbd> to move, <kbd>Space</kbd> to select</span>
+              <div class="terminal-keys"><span><kbd>Space</kbd> Select</span><span><kbd>Enter</kbd> Stop</span><span><kbd>Q</kbd> Reset</span></div>
+            </div>
+            <div id="demo-confirm" class="demo-confirm" role="dialog" aria-modal="true" aria-labelledby="confirm-title" hidden>
+              <div class="confirm-box">
+                <p class="confirm-label">CONFIRM ACTION</p>
+                <h3 id="confirm-title">Stop selected ports?</h3>
+                <p id="confirm-detail"></p>
+                <p class="confirm-warning">In the real CLI, this stops entire processes.</p>
+                <div class="confirm-actions"><button id="demo-cancel" type="button">No, cancel <kbd>N</kbd></button><button id="demo-yes" type="button">Yes, stop <kbd>Y</kbd></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo-bar"><div><span class="demo-indicator"></span><strong>Try it yourself</strong><span class="muted demo-info">This is illustrative data. No real processes are affected.</span></div><button class="reset-link" id="demo-reset" type="button">Reset demo <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8a6 6 0 1 1 0 4M4 3v5h5"/></svg></button></div>
+      </div>
+    </section>
+
+    <section class="how wrap" id="how" aria-labelledby="how-title">
+      <div class="section-intro"><h2 id="how-title">Everything you need.<br>Nothing in the way.</h2><p>Three actions, one focused workflow. The rest stays out of sight.</p></div>
+      <div class="steps">
+        <article><span class="step-number">01</span><h3>Scan.</h3><p>See the ports you can manage. Port and process are always the main event.</p></article>
+        <article><span class="step-number">02</span><h3>Select.</h3><p>Move with the arrow keys. Tap Space to check one or several ports at once.</p></article>
+        <article><span class="step-number">03</span><h3>Confirm.</h3><p>Press Enter, review the impact, then choose <code>y</code> or <code>n</code>. No surprise kills.</p></article>
+      </div>
+    </section>
+
+    <section class="install-band" id="install" aria-labelledby="install-title">
+      <div class="wrap install-grid">
+        <div class="install-copy"><h2 id="install-title">Less hunting.<br>More building.</h2><p>Small by design. Built with Node.js and the Linux <code>/proc</code> filesystem, with no runtime dependencies.</p><div class="facts"><span>Linux / Ubuntu</span><span>Node.js 20+</span><span>MIT License</span></div></div>
+        <div class="install-panel">
+          <div class="install-panel-head"><span>GET STARTED</span><span>01 / LOCAL INSTALL</span></div>
+          <p>Get the <a href="https://github.com/luan-thnh/portlane">source on GitHub</a>, then run:</p>
+
+          <div class="code-line"><code>npm link</code><button class="copy" id="copy-command" type="button" aria-label="Copy npm link command"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5"/><path d="M5 13H4a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 4 2h8a1.5 1.5 0 0 1 1.5 1.5V5"/></svg><span>Copy</span></button></div>
+          <div class="code-line"><code>portlane</code><button class="copy" id="copy-run" type="button" aria-label="Copy portlane command"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5"/><path d="M5 13H4a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 4 2h8a1.5 1.5 0 0 1 1.5 1.5V5"/></svg><span>Copy</span></button></div>
+          <p class="install-note">Not on npm yet. To use the command above, the maintainer must first <a href="https://github.com/luan-thnh/portlane/blob/main/PUBLISHING.md">publish <code>portlane-tui</code></a>. Until then, clone or download the source and run these local commands.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details wrap" aria-labelledby="details-title"><h2 id="details-title">Designed to stay out of your system's way.</h2><div class="detail-copy"><p>Portlane only shows processes it can safely offer to stop under the current user. It never requires root privileges and never silently kills anything.</p><p>Before a stop, Portlane checks process and socket identity again, and sends a graceful <code>SIGTERM</code> after confirmation. Stopping one PID can still affect every service owned by that process.</p><a href="#install">Start with Portlane <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#top"><img src="./mark.svg" width="30" height="30" alt="" aria-hidden="true">portlane<span class="brand-dot">.</span></a><span>Made for the part of development that shouldn't take time.</span><span>MIT · Linux · v0.5.3</span></footer>
+</body>
+</html>
