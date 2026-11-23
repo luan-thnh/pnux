@@ -21,6 +21,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check candidate npm package names (advisory)
+        run: |
+          node --input-type=module <<'NODE'
+          const names = [
+            'portlyn','portlino','portlark','portlune','portnix',
+            'portlan','portlano','portglide','portzino','portkeyn',
+            'portlane-cli','portlanejs','portlane-dev','portmint','portvane',
+            'portnest','portilo','portcove','portdaze','portclip'
+          ];
+          for (const name of names) {
+            try {
+              const response = await fetch('https://registry.npmjs.org/' + name, {signal: AbortSignal.timeout(8000)});
+              console.log('NPM_NAME_CHECK ' + name + ' ' + (response.status === 404 ? 'NOT_FOUND' : response.status === 200 ? 'TAKEN' : 'UNKNOWN_' + response.status));
+            } catch (error) {
+              console.log('NPM_NAME_CHECK ' + name + ' ERROR_' + error.message);
+            }
+          }
+          NODE
       - name: Run Linux CLI tests
         run: npm test
       - name: Check npm package contents (no publish)
