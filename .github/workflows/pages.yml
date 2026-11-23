@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: github-pages
@@ -18,8 +16,6 @@ jobs:
   verify:
     name: Verify Portlane
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,18 +26,53 @@ jobs:
       - name: Check npm package contents (no publish)
         run: npm run pack:check
       - name: Check landing page JavaScript
-        run: node --check site/app.js
-      - name: Check static site assets
+        run: node --check docs/app.js
+      - name: Check GitHub Pages assets
         run: |
-          test -s site/index.html
-          test -s site/style.css
-          test -s site/app.js
-          test -s site/mark.svg
+          test -s docs/index.html
+          test -s docs/style.css
+          test -s docs/app.js
+          test -s docs/mark.svg
+          test -s docs/banner.svg
+
+  pages-source:
+    name: Check Pages publishing source
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      mode: ${{ steps.pages.outputs.mode }}
+    steps:
+      - name: Detect Pages configuration
+        id: pages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              const { data } = await github.rest.repos.getPages({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              const mode = data.build_type === 'workflow' ? 'workflow' : 'branch';
+              core.setOutput('mode', mode);
+              core.info('Pages source: ' + mode);
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              core.setOutput('mode', 'disabled');
+              core.warning('Enable Pages in Settings > Pages: choose main /docs, or GitHub Actions.');
+            }
 
   deploy:
     name: Deploy landing page
-    needs: verify
+    needs: [verify, pages-source]
+    if: needs.pages-source.outputs.mode == 'workflow'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -50,7 +81,7 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: ./docs
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

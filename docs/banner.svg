@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc">
+<title id="title">Portlane — ports, under control</title><desc id="desc">Developer-friendly port manager with a focused table and multi-select.</desc>
+<rect width="1200" height="350" rx="22" fill="#101214"/>
+<path d="M0 306H1200" stroke="#292F33"/>
+<rect x="46" y="46" width="42" height="42" rx="12" fill="#C2F28A"/>
+<path d="M58 70h17m-8-9 8 9-8 9" fill="none" stroke="#15201B" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="102" y="75" fill="#F1F4F3" font-size="27" font-weight="700" font-family="Arial,Helvetica,sans-serif">portlane<tspan fill="#C2F28A">.</tspan></text>
+<text x="48" y="162" fill="#F5F7F6" font-size="47" font-weight="700" font-family="Arial,Helvetica,sans-serif">Free the port.</text>
+<text x="48" y="217" fill="#F5F7F6" font-size="47" font-weight="700" font-family="Arial,Helvetica,sans-serif">Keep building.</text>
+<text x="50" y="266" fill="#98A2A5" font-size="19" font-family="Arial,Helvetica,sans-serif">Scan · select · confirm — right in your terminal.</text>
+<rect x="683" y="48" width="461" height="250" rx="12" fill="#1C2023" stroke="#394147"/>
+<path d="M683 90H1144" stroke="#394147"/>
+<circle cx="710" cy="70" r="6" fill="#5D656A"/><circle cx="732" cy="70" r="6" fill="#5D656A"/><circle cx="754" cy="70" r="6" fill="#5D656A"/>
+<text x="1080" y="76" fill="#82908F" font-size="13" text-anchor="end" font-family="monospace">~/portlane</text>
+<text x="708" y="119" fill="#C2F28A" font-family="monospace" font-weight="700" font-size="16">PORTLANE</text>
+<text x="1105" y="119" fill="#879393" text-anchor="end" font-family="monospace" font-size="13">3 ports</text>
+<path d="M708 132H1119" stroke="#3B4548"/>
+<text x="732" y="157" fill="#84918D" font-family="monospace" font-size="12">PORT</text>
+<text x="835" y="157" fill="#84918D" font-family="monospace" font-size="12">PROCESS</text>
+<text x="1105" y="157" fill="#84918D" text-anchor="end" font-family="monospace" font-size="12">PID</text>
+<rect x="705" y="166" width="415" height="34" rx="5" fill="#2B3733"/>
+<rect x="719" y="176" width="13" height="13" rx="2" fill="#C2F28A"/>
+<path d="m722 182 3 3 5-6" stroke="#163023" fill="none" stroke-width="2"/>
+<text x="747" y="188" fill="#C2F28A" font-family="monospace" font-size="15" font-weight="700">:3000</text>
+<text x="835" y="188" fill="#E4ECE7" font-family="monospace" font-size="15">next-server</text>
+<text x="1106" y="188" fill="#83908E" text-anchor="end" font-family="monospace" font-size="14">18420</text>
+<rect x="719" y="215" width="13" height="13" rx="2" fill="none" stroke="#87908E"/>
+<text x="747" y="227" fill="#D5E7DC" font-family="monospace" font-size="15" font-weight="700">:5173</text>
+<text x="835" y="227" fill="#D1DBD8" font-family="monospace" font-size="15">vite</text>
+<text x="1106" y="227" fill="#83908E" text-anchor="end" font-family="monospace" font-size="14">19210</text>
+<text x="709" y="279" fill="#87938E" font-family="monospace" font-size="12">↑↓ Move     Space Select     Enter Stop</text>
+<text x="48" y="331" fill="#8C9796" font-size="13" font-family="monospace">LINUX / UBUNTU</text>
+<text x="1136" y="331" fill="#8C9796" text-anchor="end" font-size="13" font-family="monospace">NO SUDO · NO DAEMON · MIT</text>
+</svg>

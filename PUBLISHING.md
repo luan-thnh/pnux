@@ -1,33 +1,17 @@
-# Publish Portlane to GitHub
+# Portlane — website deployment and npm release
 
-**Target:** `luan-thnh/portlane` (public, `main`).
+The repository is live at https://github.com/luan-thnh/portlane.
 
-The connected GitHub app can commit to existing repositories, but cannot create one or change repository Pages settings.
+## GitHub Pages
 
-## Preferred: finish with the connected GitHub app
+The website source is in `docs/` and is compatible with **both** GitHub Pages modes.
 
-1. At https://github.com/new create repository `portlane` under `luan-thnh`; select **Public** and **Add a README** to initialize the `main` branch.
-2. Share the URL `https://github.com/luan-thnh/portlane` back in the conversation. The existing GitHub connector can upload the source files and workflow to that existing repository.
-3. In GitHub, open **Settings > Pages > Build and deployment > Source > GitHub Actions**.
-4. Once source is pushed, check **Actions > Test and deploy GitHub Pages**. If Pages wasn't enabled on the first run, click **Run workflow**.
-5. The public site URL should be `https://luan-thnh.github.io/portlane/` only after the deploy job succeeds.
+- **Recommended for first setup:** go to **Settings → Pages → Deploy from a branch**, choose `main` and `/docs`, then click **Save**. GitHub automatically publishes updated `docs/` content on every push.
+- **GitHub Actions deployment:** alternatively, choose **Settings → Pages → Source → GitHub Actions**. The workflow `.github/workflows/pages.yml` first runs tests, then deploys `docs/` when this publishing mode is enabled. If switching modes after a successful push, trigger it again under **Actions → Test and deploy GitHub Pages → Run workflow**.
 
-## Alternative: push from local machine
+An initial workflow run may skip deploy until Pages has been enabled. This is expected; `GITHUB_TOKEN` cannot enable the Pages site for you. The website URL is https://luan-thnh.github.io/portlane/ **only after GitHub reports a successful Pages deployment**.
 
-Create the repository **without** initializing it with README, .gitignore or license. Then, from the source root:
-
-```bash
-git init -b main
-git add .
-git commit -m "feat: release Portlane CLI and landing page"
-git remote add origin https://github.com/luan-thnh/portlane.git
-git push -u origin main
-```
-
-Use your existing GitHub credential helper; don't put access tokens in the source. After the push, configure GitHub Pages source as above.
-
-The workflow tests the CLI and builds/uploads only the static `site/` folder. It does **not** publish any npm package.
-
+No workflow publishes npm packages.
 
 ## Publish to npm manually (maintainers only)
 
