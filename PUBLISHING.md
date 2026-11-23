@@ -1,4 +1,4 @@
-# PNUX — website deployment and npm release
+# PNIX — website deployment and npm release
 
 The repository is live at https://github.com/luan-thnh/pnux.
 
@@ -15,34 +15,28 @@ No workflow publishes npm packages.
 
 ## Publish to npm manually (maintainers only)
 
-The new npm package name is **`pnux`**, and its executable is also **`pnux`**. The GitHub repository intentionally stays at `luan-thnh/pnux` to preserve existing links.
+The intended npm package and executable are both **`pnix`**. The GitHub repository stays at `luan-thnh/pnux` unless renamed separately.
 
-Before publishing, check that the name is still available. **Important:** npm previously rejected the unscoped name `pnux` as too similar to other packages. A 404 for `pnux9` only indicates no public entry; npm can still reject the new name under its similarity protections. The definitive check is a successful `npm publish --access public`.
+**Name availability is not publishability.** `npm-name-cli` returned “available” for `pnux` despite npm's real publish rejecting it with `E403` for name similarity. `pnux9` was likewise rejected. Registry 404, `npm view`, `npm-name --similar`, and `npm publish --dry-run` cannot guarantee that npm will accept `pnix`.
 
 ```bash
+git pull origin main
 npm whoami
-npm view pnux9 name version      # E404 is expected before first publication
 npm test
 npm run pack:check
 npm publish --access public
 ```
 
-If needed, sign in using `npm login` and complete npm's authentication requirements.
+If the registry rejects this name, use a more distinctive unscoped name or your own npm scope.
 
-Verify after publication:
-
-```bash
-npm view pnux9 name version bin
-npx pnux9
-# Or install globally:
-npm install -g pnux9
-pnux9  # pnux also works as an alias
-```
-
-**Old package:** `portlane-tui` is a separate, already-published package. npm does not rename releases automatically. Only after `pnux9` publishes successfully, you may optionally mark old versions deprecated for a migration notice:
+Verify after **successful** publication:
 
 ```bash
-npm deprecate 'portlane-tui@*' 'Renamed to PNUX (npm: pnux9). Use npx pnux9 instead.'
+npm view pnix name version bin
+npx pnix
+# Or:
+npm install -g pnix
+pnix
 ```
 
-Do not unpublish the old package just to change names. Never commit npm tokens or `.npmrc` credentials. GitHub Actions does **not** publish to npm.
+The older `portlane-tui` package remains separate. Do not unpublish it automatically. GitHub Actions never publishes npm. Do not commit authentication credentials.

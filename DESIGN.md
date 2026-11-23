@@ -1,4 +1,4 @@
-# PNUX design system
+# PNIX design system
 
 - **Promise:** Port is always visually dominant, process next, PID last.
 - **TUI:** Terminal-native characters, a single restrained green accent, dim metadata, selected-row background, no tabs or panels. Confirm before every signal.
@@ -10,4 +10,4 @@
 
 ## Installation command
 
-The landing page hero presents one copyable `npx pnux9` command in a neutral code surface. Clearly mark it as usable only after the maintainer publishes `pnux9` to npm; point users to the GitHub source for local installation. The GitHub repository URL is `luan-thnh/pnux`.
+The landing page hero presents one copyable `npx pnix` command in a neutral code surface. Clearly mark it as usable only after the maintainer successfully publishes `pnix` to npm; point users to the GitHub source for local installation. The GitHub repository URL is `luan-thnh/pnux`.

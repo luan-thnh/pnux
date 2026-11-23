@@ -22,7 +22,7 @@ Runs in the user's terminal as a regular user; looks up Linux `/proc` sockets. T
 - Not published to npm Registry; GitHub Pages deployment depends on repository configuration.
 
 ## Brand Commitments
-Name: PNUX. Copy is restrained and specific. Simplicity is a primary usability constraint.
+Name: PNIX. Copy is restrained and specific. Simplicity is a primary usability constraint.
 
 ## Evidence on Hand
 Source code, automated tests, example screenshots generated from the TUI renderer. No user testimonials or production performance benchmarks.

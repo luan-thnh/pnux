@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.0 — Prepare PNIX npm package
+
+- Prepared the npm package and executable as `pnix` for `npx pnix` after accepted publication.
+- Updated TUI, website, README translations, installation instructions and tests.
+- Documented prior `pnux` and `pnux9` E403 rejections despite npm-name availability checks.
+- GitHub repository remains `luan-thnh/pnux`; no npm publication or signal logic changes.
+
+## Prior history
+
 ## Unreleased — npm package name `pnux9`
 
 - npm unscoped name `pnux` was rejected (403) by npm for similarity to established packages.

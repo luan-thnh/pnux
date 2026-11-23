@@ -29,7 +29,7 @@ export function renderTableScreen({ entries, cursor = 0, selected = new Set(), p
   const visible = entries.slice(offset, offset + itemCount);
   const suffix = `${entries.length} ports${selected.size ? ` · ${selected.size} checked` : ''}`;
   let out = '\x1b[H\x1b[2J\x1b[?25l';
-  out += `  ${C.bold}${C.accent}PNUX${C.reset}${' '.repeat(Math.max(2, width - suffix.length - 10))}${C.muted}${suffix}${C.reset}\n`;
+  out += `  ${C.bold}${C.accent}PNIX${C.reset}${' '.repeat(Math.max(2, width - suffix.length - 10))}${C.muted}${suffix}${C.reset}\n`;
   out += `  ${C.subtle}${'─'.repeat(width)}${C.reset}\n\n`;
   out += `         ${C.muted}${'PORT'.padEnd(8)}  ${'PROCESS'.padEnd(nameWidth)}${withPid ? '  ' + 'PID'.padStart(7) : ''}${C.reset}\n`;
   for (let i = 0; i < visible.length; i++) {

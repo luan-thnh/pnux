@@ -7,27 +7,27 @@ import { manageablePorts } from '../src/managed.js';
 
 const args = new Set(process.argv.slice(2));
 function help() {
-  console.log(`PNUX v0.6.0 — compact port table for Linux
+  console.log(`PNIX v0.7.0 — compact port table for Linux
 
 Usage:
-  pnux9              Interactive list of ports you can manage
-  pnux9 --list        List manageable ports without the UI
-  pnux9 --json        Inspect raw sockets as JSON (read-only)
-  pnux9 --help        Show help
+  pnix              Interactive list of ports you can manage
+  pnix --list        List manageable ports without the UI
+  pnix --json        Inspect raw sockets as JSON (read-only)
+  pnix --help        Show help
 
 Keys: ↑↓ move · Space check/uncheck · Enter stop checked · y/n confirm · q quit (r refresh)
 
 Advanced read-only inspection:
-  pnux9 --list --all  All visible sockets (including restricted)
-  pnux9 --list --mine All sockets mapped to your user
-  pnux9 --udp         Include bound UDP listeners
+  pnix --list --all  All visible sockets (including restricted)
+  pnix --list --mine All sockets mapped to your user
+  pnix --udp         Include bound UDP listeners
 
 No sudo, no automatic kill, no SIGKILL. One SIGTERM per confirmed process.
 `);
 }
 function main() {
   if (args.has('--help') || args.has('-h')) { help(); return; }
-  if (args.has('--version') || args.has('-v')) { console.log('0.6.0'); return; }
+  if (args.has('--version') || args.has('-v')) { console.log('0.7.0'); return; }
   const allowed = new Set(['--list', '--json', '--udp', '--all', '--mine']);
   const bad = [...args].filter(arg => !allowed.has(arg));
   if (bad.length) { console.error(`Unknown option: ${bad.join(', ')}. Use --help.`); process.exitCode = 2; return; }
@@ -58,4 +58,4 @@ function main() {
   }
   startUI({ udp: args.has('--udp') });
 }
-try { main(); } catch (e) { console.error(`pnux9: ${e.message}`); process.exitCode = 1; }
+try { main(); } catch (e) { console.error(`pnix: ${e.message}`); process.exitCode = 1; }

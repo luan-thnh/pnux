@@ -1,11 +1,10 @@
 {
-  "name": "pnux9",
-  "version": "0.6.0",
+  "name": "pnix",
+  "version": "0.7.0",
   "description": "A compact, safe multi-select port manager for Linux developers",
   "type": "module",
   "bin": {
-    "pnux9": "./bin/pnux.js",
-    "pnux": "./bin/pnux.js"
+    "pnix": "./bin/pnix.js"
   },
   "exports": {
     ".": "./src/index.js"
@@ -18,10 +17,10 @@
     "LICENSE"
   ],
   "scripts": {
-    "start": "node ./bin/pnux.js",
+    "start": "node ./bin/pnix.js",
     "test": "node --test",
     "pack:check": "npm pack --dry-run",
-    "demo": "node ./bin/pnux.js --list"
+    "demo": "node ./bin/pnix.js --list"
   },
   "engines": {
     "node": ">=20"

@@ -4,7 +4,7 @@
 <path d="M1 50H929" stroke="#31393B"/><circle cx="25" cy="25" r="6" fill="#727D7D"/><circle cx="47" cy="25" r="6" fill="#727D7D"/><circle cx="69" cy="25" r="6" fill="#727D7D"/>
 <text x="900" y="30" fill="#9EA9A8" font-family="monospace" font-size="13" text-anchor="end">Terminal demo · illustrative</text>
 <g font-family="monospace">
-<text x="38" y="96" font-weight="700" font-size="22" fill="#BDEC8A">PNUX</text><text x="888" y="96" font-size="15" fill="#8F9A98" text-anchor="end">3 ports · 2 checked</text>
+<text x="38" y="96" font-weight="700" font-size="22" fill="#BDEC8A">PNIX</text><text x="888" y="96" font-size="15" fill="#8F9A98" text-anchor="end">3 ports · 2 checked</text>
 <path d="M38 112H892" stroke="#394442"/>
 <text x="120" y="150" font-size="14" fill="#9AA5A3">PORT</text><text x="300" y="150" font-size="14" fill="#9AA5A3">PROCESS</text><text x="866" y="150" font-size="14" fill="#9AA5A3" text-anchor="end">PID</text>
 <rect x="33" y="168" width="861" height="43" rx="6" fill="#26352E"/>

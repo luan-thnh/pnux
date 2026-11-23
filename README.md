@@ -1,6 +1,6 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
-  <h1>PNUX</h1>
+  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNIX" /></a>
+  <h1>PNIX</h1>
   <p><strong>Find the port. Select the process. Get back to building.</strong></p>
   <p>
     <a href="https://luan-thnh.github.io/pnux/">Website</a> ·
@@ -16,35 +16,35 @@
   </p>
 </div>
 
-![PNUX terminal manager hero](docs/banner.svg)
+![PNIX terminal manager hero](docs/banner.svg)
 
 > **Illustration:** example ports and process IDs shown above are not real processes on your machine.
 
-PNUX is a small, keyboard-first **Linux port manager**. It shows the listening ports you can manage, with the **port number first**, the process name next, and technical details out of the way. Select several rows with Space; stop only after confirming.
+PNIX is a small, keyboard-first **Linux port manager**. It shows the listening ports you can manage, with the **port number first**, the process name next, and technical details out of the way. Select several rows with Space; stop only after confirming.
 
 ## Quick start
 
 ```bash
-npx pnux9
+npx pnix
 ```
 
-**npm release pending:** `npx pnux9` will work after the maintainer publishes the new `pnux9` package. Until then, run the source version below.
+**npm release pending:** `pnix` is an intended npm name, not a confirmed release. The prior names `pnux` and `pnux9` were rejected by npm's similarity check despite availability checks. `npx pnix` will work only **after successful publication**.
 
 **Run from source today** (Linux/Ubuntu, Node.js 20+, normal user):
 
 ```bash
 git clone https://github.com/luan-thnh/pnux.git
-cd pnux
+cd pnix
 npm start
 ```
 
-Or install a local global command with `npm link`, then run `pnux9` (or the `pnux` alias). No external runtime dependencies or daemon. The GitHub repository is now named [`pnux`](https://github.com/luan-thnh/pnux).
+Or install a local global command with `npm link`, then run `pnix`. No external runtime dependencies or daemon. The GitHub repository is now named [`pnix`](https://github.com/luan-thnh/pnux).
 
 ## Terminal preview
 
-<p align="center"><img src="docs/terminal.svg" alt="PNUX table with checked ports" width="860" /></p>
+<p align="center"><img src="docs/terminal.svg" alt="PNIX table with checked ports" width="860" /></p>
 <p align="center"><sub>Focused port-first table · <kbd>Space</kbd> to select multiple rows</sub></p>
-<p align="center"><img src="docs/confirmation.svg" alt="PNUX confirmation prompt" width="860" /></p>
+<p align="center"><img src="docs/confirmation.svg" alt="PNIX confirmation prompt" width="860" /></p>
 <p align="center"><sub>Review before sending one graceful SIGTERM per unique process</sub></p>
 
 | Key | Action |
@@ -59,11 +59,11 @@ Or install a local global command with `npm link`, then run `pnux9` (or the `pnu
 ### Read-only CLI
 
 ```bash
-pnux9 --list          # Manageable listening ports
-pnux9 --list --mine   # Current-user sockets and protection status
-pnux9 --list --all    # All visible sockets
-pnux9 --json          # Machine-readable output
-pnux9 --udp --list    # Include UDP
+pnix --list          # Manageable listening ports
+pnix --list --mine   # Current-user sockets and protection status
+pnix --list --all    # All visible sockets
+pnix --json          # Machine-readable output
+pnix --udp --list    # Include UDP
 ```
 
 ## Built to be careful
@@ -87,4 +87,4 @@ The landing page is static HTML, CSS and JavaScript in [`docs/`](docs/). View lo
 
 **GitHub Pages:** in **Settings → Pages**, select **Deploy from a branch → main → /docs → Save**. Alternatively select **Source → GitHub Actions** to let the [workflow](.github/workflows/pages.yml) deploy `docs/`. The workflow runs tests but **never publishes npm**; only the maintainer does that, following [PUBLISHING.md](PUBLISHING.md).
 
-Inspired by [npkill](https://github.com/voidcosmos/npkill)'s focused TUI. PNUX's port management logic is an independent implementation. [MIT License](LICENSE).
+Inspired by [npkill](https://github.com/voidcosmos/npkill)'s focused TUI. PNIX's port management logic is an independent implementation. [MIT License](LICENSE).

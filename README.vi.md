@@ -1,41 +1,41 @@
 <div align="center">
-  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNUX" /></a>
-  <h1>PNUX</h1>
+  <a href="https://luan-thnh.github.io/pnux/"><img src="docs/mark.svg" width="56" alt="PNIX" /></a>
+  <h1>PNIX</h1>
   <p><strong>Thấy port ngay. Chọn nhanh. Dừng có xác nhận.</strong></p>
   <p><a href="https://luan-thnh.github.io/pnux/">Website</a> · <a href="README.md">English</a> · <a href="#chạy-thử">Bắt đầu</a></p>
 </div>
 
-![Giới thiệu PNUX](docs/banner.svg)
+![Giới thiệu PNIX](docs/banner.svg)
 
 > Banner và các ảnh TUI dùng dữ liệu minh họa, không phải tiến trình thực tế.
 
-**PNUX** là công cụ quản lý port cho Linux/Ubuntu. Giao diện bảng ưu tiên **PORT**, tiếp đến tên ứng dụng; hỗ trợ chọn nhiều bằng <kbd>Space</kbd> và xác nhận <kbd>Y/N</kbd> trước khi dừng.
+**PNIX** là công cụ quản lý port cho Linux/Ubuntu. Giao diện bảng ưu tiên **PORT**, tiếp đến tên ứng dụng; hỗ trợ chọn nhiều bằng <kbd>Space</kbd> và xác nhận <kbd>Y/N</kbd> trước khi dừng.
 
 ## Chạy thử
 
 Sau khi chủ dự án phát hành npm:
 
 ```bash
-npx pnux9
+npx pnix
 ```
 
-**Package `pnux9` chưa được publish lên npm.** Sau khi bạn tự publish, lệnh `npx pnux9` mới chạy được. Hiện tại có thể chạy từ source ở bên dưới.
+**Package `pnix` chưa publish lên npm.** Kết quả `npm-name-cli` báo available không bảo đảm publish được: npm từng từ chối `pnux` và `pnux9` vì tên quá giống. Chỉ sau khi publish thành công mới sử dụng được `npx pnix`.
 
 Chạy ngay từ source (Node.js 20+, Linux, tài khoản thường):
 
 ```bash
 git clone https://github.com/luan-thnh/pnux.git
-cd pnux
+cd pnix
 npm start
 ```
 
-Nếu muốn dùng lệnh `pnux9` (hoặc alias `pnux`) trên máy: chạy `npm link` trong thư mục dự án.
+Nếu muốn dùng lệnh `pnix` trên máy: chạy `npm link` trong thư mục dự án.
 
 ## Giao diện thực tế
 
-<p align="center"><img src="docs/terminal.svg" alt="Bảng PNUX" width="860" /></p>
+<p align="center"><img src="docs/terminal.svg" alt="Bảng PNIX" width="860" /></p>
 <p align="center"><sub>PORT · PROCESS · PID, chọn nhiều bằng Space</sub></p>
-<p align="center"><img src="docs/confirmation.svg" alt="Hộp xác nhận PNUX" width="860" /></p>
+<p align="center"><img src="docs/confirmation.svg" alt="Hộp xác nhận PNIX" width="860" /></p>
 
 | Phím | Tác dụng |
 | --- | --- |
@@ -49,11 +49,11 @@ Nếu muốn dùng lệnh `pnux9` (hoặc alias `pnux`) trên máy: chạy `npm 
 ### Xem thông tin (không kill)
 
 ```bash
-pnux9 --list
-pnux9 --list --mine
-pnux9 --list --all
-pnux9 --json
-pnux9 --udp --list
+pnix --list
+pnix --list --mine
+pnix --list --all
+pnix --json
+pnix --udp --list
 ```
 
 ## Cơ chế an toàn
