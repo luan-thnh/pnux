@@ -44,10 +44,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luan-thnh/portlane.git"
+    "url": "git+https://github.com/luan-thnh/pnux.git"
   },
-  "homepage": "https://github.com/luan-thnh/portlane#readme",
+  "homepage": "https://github.com/luan-thnh/pnux#readme",
   "bugs": {
-    "url": "https://github.com/luan-thnh/portlane/issues"
+    "url": "https://github.com/luan-thnh/pnux/issues"
   }
 }
